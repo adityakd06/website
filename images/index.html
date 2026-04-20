@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Growth Vector — Defining the Future of Intelligent Growth.</title>
+  <meta name="description"
+    content="Defining the Future of Intelligent Growth. Growth Vector is a premier Business Consulting and Services firm specializing in AI-powered analytics, FinTech intelligence, and cloud-native data platforms." />
+  <meta name="keywords"
+    content="Business Consulting, AI Services, Data Engineering, Machine Learning, FinTech AI, Analytics Strategy, Cloud Data Platform" />
+  <meta name="author" content="Growth Vector" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://growthvector.ai/" />
+  <meta property="og:title" content="Growth Vector — Data & AI Transformation" />
+  <meta property="og:description"
+    content="Turn raw data into unfair advantage with Growth Vector's enterprise AI and data engineering solutions." />
+  <meta property="og:image" content="images/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://growthvector.ai/" />
+  <meta property="twitter:title" content="Growth Vector — Data & AI Transformation" />
+  <meta property="twitter:description"
+    content="Turn raw data into unfair advantage with Growth Vector's enterprise AI and data engineering solutions." />
+  <meta property="twitter:image" content="images/og-image.png" />
+
+  <link rel="canonical" href="https://growthvector.ai/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BusinessConsulting",
+      "name": "Growth Vector",
+      "description": "Defining the Future of Intelligent Growth. Business consulting and AI services company.",
+      "url": "https://growthvector.ai/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressRegion": "AE",
+        "streetAddress": "Dubai International Financial Centre"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --c-bg: #ffffff;
+      --c-surface: #f8fafc;
+      --c-card: #ffffff;
+      --c-border: rgba(0, 0, 0, 0.08);
+      --c-border-hover: rgba(255, 107, 43, 0.4);
+
+      --c-text: #0f172a;
+      --c-muted: #64748b;
+
+      --c-orange: #ff7e47;
+      --c-pink: #f43f5e;
+      --c-violet: #8b5cf6;
+      --c-cyan: #0ea5e9;
+      --c-lime: #84cc16;
+
+      --grad-primary: linear-gradient(135deg, #ff7e47 0%, #f43f5e 50%, #8b5cf6 100%);
+      --grad-secondary: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+      --grad-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+      --shadow-glow: 0 0 20px -5px rgba(255, 107, 43, 0.15);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.15;
+    }
+
+    /* ── GRID BG ── */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 6%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--c-border);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--c-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--c-text);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      background: var(--grad-primary);
+      color: #fff !important;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 700 !important;
+      font-size: 0.8rem !important;
+      box-shadow: 0 4px 15px rgba(255, 107, 43, 0.2);
+      transition: all 0.3s !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px) scale(1.05) !important;
+      box-shadow: 0 8px 25px rgba(255, 107, 43, 0.4);
+      opacity: 1 !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 6% 80px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, #f1f5f9 0%, #ffffff 100%);
+    }
+
+    .data-mesh {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 107, 43, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 107, 43, 0.2);
+      color: var(--c-orange);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--c-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--c-orange);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: scale(1.4)
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+      margin-bottom: 24px;
+      animation: fadeUp 1s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero h1 .grad-text {
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      min-height: 1.2em;
+      display: inline-block;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 0.8em;
+      background: var(--c-orange);
+      margin-left: 4px;
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero h1 .grad-text::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--grad-primary);
+      opacity: 0.15;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--c-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.6;
+      animation: fadeUp 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 54px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .btn-primary {
+      background: var(--grad-primary);
+      color: #fff;
+      padding: 18px 42px;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 40px -10px rgba(255, 107, 43, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 50px -10px rgba(255, 107, 43, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.03);
+      backdrop-filter: blur(10px);
+      color: var(--c-text);
+      padding: 17px 42px;
+      border-radius: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      border: 1px solid var(--c-border);
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 72px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--c-muted);
+      margin-top: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      position: relative;
+      padding: 100px 6%;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--grad-primary);
+      border-radius: 2px;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      max-width: 600px;
+    }
+
+    .section-sub {
+      color: var(--c-muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-top: 14px;
+      font-weight: 300;
+    }
+
+    /* ── LOGO MARQUEE ── */
+    .marquee-section {
+      padding: 24px 0;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.015);
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .marquee-label {
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 80px;
+      animation: marquee 40s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-item {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--c-muted);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      opacity: 0.4;
+      transition: all 0.4s;
+    }
+
+    .marquee-item:hover {
+      opacity: 1;
+      color: var(--c-text);
+      transform: scale(1.1);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .services {
+      background: var(--c-surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dynamic Blobs */
+    .services::before,
+    .services::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .services::before {
+      width: 400px;
+      height: 400px;
+      background: var(--c-orange);
+      top: -100px;
+      left: -100px;
+      animation: float1 10s infinite alternate;
+    }
+
+    .services::after {
+      width: 300px;
+      height: 300px;
+      background: var(--c-violet);
+      bottom: -50px;
+      right: -50px;
+      animation: float2 12s infinite alternate-reverse;
+    }
+
+    .services-header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .services-grid {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      /* Removed the 2px background border for a cleaner, modern look */
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(10px);
+      padding: 48px 40px;
+      border: 1px solid var(--c-border);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255, 107, 43, 0.1), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .service-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--c-border-hover);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-soft), var(--shadow-glow);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Refined Glass Icons */
+    .icon-orange {
+      background: rgba(255, 126, 71, 0.1);
+      border: 1px solid rgba(255, 126, 71, 0.2);
+    }
+
+    .icon-pink {
+      background: rgba(244, 63, 94, 0.1);
+      border: 1px solid rgba(244, 63, 94, 0.2);
+    }
+
+    .icon-violet {
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .icon-cyan {
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+    }
+
+    .icon-lime {
+      background: rgba(132, 204, 22, 0.1);
+      border: 1px solid rgba(132, 204, 22, 0.2);
+    }
+
+    .icon-gold {
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.2);
+    }
+
+    .icon-rose {
+      background: rgba(244, 63, 94, 0.1);
+      border: 1px solid rgba(244, 63, 94, 0.2);
+    }
+
+    .icon-teal {
+      background: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.2);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      margin-top: 10px;
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+      transition: opacity 0.5s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .service-card:hover .service-card-bg {
+      opacity: 0.25;
+      transform: scale(1.08);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--c-muted);
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--c-border);
+      color: var(--c-muted);
+      transition: all 0.3s;
+    }
+
+    .service-card:hover .tag {
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--c-text);
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      margin-top: 56px;
+      position: relative;
+    }
+
+    .how-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--c-orange), var(--c-pink), var(--c-violet), transparent);
+      opacity: 0.5;
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    .step-num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--c-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 auto 20px;
+      background: var(--c-bg);
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.3s;
+    }
+
+    .step:hover .step-num {
+      border-color: var(--c-orange);
+      background: rgba(255, 107, 43, 0.08);
+    }
+
+    .step h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* ── INDUSTRIES ── */
+    .industries {
+      background: var(--c-bg);
+    }
+
+    .industry-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--c-border);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .industry-card:hover {
+      border-color: var(--c-border-hover);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .industry-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+    }
+
+    .industry-card h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--c-text);
+    }
+
+    .industry-card p {
+      font-size: 0.85rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* ── TECH STACK ── */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 48px;
+    }
+
+    .tech-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--c-card);
+      border: 1px solid var(--c-border);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--c-muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .tech-pill:hover {
+      border-color: rgba(0, 212, 255, 0.4);
+      color: var(--c-text);
+    }
+
+    .tech-pill span {
+      font-size: 1rem;
+    }
+
+    /* ── METRICS ── */
+    .metrics-section {
+      background: var(--c-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metrics-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      background: var(--c-border);
+      border: 1px solid var(--c-border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 56px;
+    }
+
+    .metric-card {
+      background: var(--c-surface);
+      padding: 48px 36px;
+      text-align: center;
+    }
+
+    .metric-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .metric-label {
+      color: var(--c-muted);
+      font-size: 0.85rem;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--c-surface);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .testi-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--c-border);
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .testi-card:hover {
+      border-color: var(--c-border-hover);
+      background: rgba(255, 255, 255, 0.04);
+      transform: scale(1.02);
+    }
+
+    .testi-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      right: 24px;
+      font-size: 8rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: rgba(255, 107, 43, 0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      color: #fbbf24;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .testi-text {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(240, 242, 255, 0.85);
+      margin-bottom: 24px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      background: var(--grad-primary);
+      color: #fff;
+    }
+
+    .testi-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .testi-role {
+      font-size: 0.78rem;
+      color: var(--c-muted);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 160px 6%;
+      background: #ffffff;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 107, 43, 0.1) 0%, transparent 60%);
+      animation: ctaPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes ctaPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 0.8;
+      }
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      color: var(--c-text);
+    }
+
+    .cta-section p {
+      color: var(--c-muted);
+      font-size: 1.15rem;
+      max-width: 550px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      max-width: 550px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px;
+      border-radius: 16px;
+      border: 1px solid var(--c-border);
+      backdrop-filter: blur(10px);
+    }
+
+    .cta-input {
+      flex: 1;
+      min-width: 240px;
+      background: transparent;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      color: var(--c-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .cta-input:focus {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cta-form .btn-primary {
+      padding: 14px 32px;
+      border-radius: 10px;
+      width: auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+      padding: 60px 6% 32px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 52px;
+    }
+
+    .footer-brand .nav-logo {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand p {
+      font-size: 0.87rem;
+      color: var(--c-muted);
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-text);
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col a {
+      color: var(--c-muted);
+      text-decoration: none;
+      font-size: 0.87rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--c-text);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--c-border);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--c-muted);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--c-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .social-link:hover {
+      border-color: var(--c-orange);
+      color: var(--c-text);
+      background: rgba(255, 107, 43, 0.1);
+      transform: translateY(-3px) rotate(8deg);
+    }
+
+    /* ── CASE STUDIES ── */
+    .cases {
+      background: #ffffff;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+
+    .case-card {
+      background: var(--c-surface);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--c-border);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .case-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--c-orange);
+      box-shadow: var(--shadow-soft), var(--shadow-glow);
+    }
+
+    .case-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(255, 126, 71, 0.1);
+      color: var(--c-orange);
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .case-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .case-card p {
+      color: var(--c-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .case-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--c-border);
+    }
+
+    .case-stat-num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--c-text);
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .case-stat-label {
+      font-size: 0.75rem;
+      color: var(--c-muted);
+      display: block;
+    }
+
+    /* ── BLOG ── */
+    .blog-section {
+      background: var(--c-surface);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      transition: all 0.4s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-soft);
+      border-color: var(--c-border-hover);
+    }
+
+    .blog-image {
+      height: 200px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .blog-content {
+      padding: 24px;
+    }
+
+    .blog-meta {
+      font-size: 0.75rem;
+      color: var(--c-orange);
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .blog-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      transition: color 0.3s;
+    }
+
+    .blog-card:hover h3 {
+      color: var(--c-orange);
+    }
+
+    .blog-card p {
+      font-size: 0.9rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT FORM UPGRADE ── */
+    .contact-container {
+      max-width: 600px;
+      margin: 40px auto 0;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--c-border);
+      text-align: left;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--c-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--c-border);
+      background: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--c-orange);
+      box-shadow: 0 0 0 4px rgba(255, 126, 71, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .how-steps::before {
+        display: none;
+      }
+
+      .hero-stats {
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <img src="images/Group 26.png" alt="Growth Vector Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#how">Process</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact" class="nav-cta">Work With Us →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="grid-bg"></div>
+
+    <!-- "Crazy" Data Mesh Aesthetic -->
+    <div class="data-mesh">
+      <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice">
+        <path
+          d="M0 400C120 400 240 200 360 200C480 200 600 600 720 600C840 600 960 300 1080 300C1200 300 1320 500 1440 500"
+          stroke="url(#paint0_linear)" stroke-width="2" stroke-dasharray="10 20">
+          <animate attributeName="stroke-dashoffset" from="0" to="300" dur="10s" repeatCount="indefinite" />
+        </path>
+        <path d="M0 600C150 600 300 400 450 400C600 400 750 700 900 700C1050 700 1200 500 1350 500"
+          stroke="url(#paint1_linear)" stroke-width="1.5" stroke-dasharray="5 15">
+          <animate attributeName="stroke-dashoffset" from="300" to="0" dur="15s" repeatCount="indefinite" />
+        </path>
+        <defs>
+          <linearGradient id="paint0_linear" x1="0" y1="400" x2="1440" y2="400" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ff7e47" stop-opacity="0" />
+            <stop offset="0.5" stop-color="#f43f5e" />
+            <stop offset="1" stop-color="#8b5cf6" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="paint1_linear" x1="0" y1="600" x2="1440" y2="600" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0ea5e9" stop-opacity="0" />
+            <stop offset="0.5" stop-color="#8b5cf6" />
+            <stop offset="1" stop-color="#f43f5e" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Business Consulting & AI Services
+      </div>
+
+      <h1>
+        Defining the Future of<br />
+        <span class="grad-text" id="typing-text">Intelligent Growth</span><span class="typing-cursor"></span>
+      </h1>
+
+      <p>
+        We engineer AI-powered analytics, FinTech intelligence, and cloud-native data platforms that help enterprises
+        move faster, decide smarter, and grow stronger.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start Your AI Journey →</a>
+        <a href="#services" class="btn-secondary">Explore Services</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num counter" data-target="300" data-suffix="+">0</div>
+          <div class="stat-label">Enterprise Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num counter" data-target="18" data-suffix="+">0</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num counter" data-target="5" data-suffix="B+">0</div>
+          <div class="stat-label">Data Points Processed Daily</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num counter" data-target="92" data-suffix="%">0</div>
+          <div class="stat-label">Client Retention Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <p class="marquee-label">Trusted by teams at</p>
+    <div style="overflow:hidden;display:flex;">
+      <div class="marquee-track">
+        <span class="marquee-item">HDFC Bank</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Axis Bank</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">ICICI Prudential</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Bajaj Finserv</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Tata Motors</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Reliance Retail</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Apollo Hospitals</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Sun Pharma</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">IndiaMart</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Flipkart</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">HDFC Bank</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Axis Bank</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">ICICI Prudential</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Bajaj Finserv</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Tata Motors</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Reliance Retail</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Apollo Hospitals</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Sun Pharma</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">IndiaMart</span>
+        <span class="marquee-item">✦</span>
+        <span class="marquee-item">Flipkart</span>
+        <span class="marquee-item">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">End-to-End Data & AI Services</h2>
+        <p class="section-sub">From raw pipelines to boardroom intelligence — we cover the entire data value chain.</p>
+      </div>
+      <a href="#contact" class="btn-secondary" style="white-space:nowrap;">View All Services →</a>
+    </div>
+
+    <div class="services-grid reveal">
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/Advanced Analytics & BI/analytics.jpg');">
+        </div>
+        <h3>Advanced Analytics & BI</h3>
+        <p>Transform complex datasets into decision-ready dashboards, KPI frameworks, and self-serve BI tools powered by
+          Tableau, Power BI, and custom visualization layers.</p>
+        <div class="service-tags">
+          <span class="tag">Tableau</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Predictive</span>
+          <span class="tag">KPI Modeling</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/ai_ml solutions/downloads.jpg');"></div>
+        <h3>AI / ML Solutions</h3>
+        <p>Custom machine learning models, GenAI applications, NLP pipelines, and agentic AI systems built for
+          enterprise scale — with full ownership transferred to you.</p>
+        <div class="service-tags">
+          <span class="tag">GenAI</span>
+          <span class="tag">MLOps</span>
+          <span class="tag">LLM Apps</span>
+          <span class="tag">NLP</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/data engineering/images.jpg');"></div>
+        <h3>Data Engineering</h3>
+        <p>Design and build fault-tolerant data pipelines, lakehouses, and warehouses. We modernize legacy systems and
+          migrate to cloud-native architectures at speed.</p>
+        <div class="service-tags">
+          <span class="tag">Snowflake</span>
+          <span class="tag">Databricks</span>
+          <span class="tag">dbt</span>
+          <span class="tag">Airflow</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/FinTech & BFSI Intelligence/download.jpg');">
+        </div>
+        <h3>FinTech & BFSI Intelligence</h3>
+        <p>AI-driven credit decisioning, digital onboarding, fraud detection, KYC/KYB automation, and document analysis
+          — built for banks, NBFCs, and insurers.</p>
+        <div class="service-tags">
+          <span class="tag">Credit Risk</span>
+          <span class="tag">KYC/KYB</span>
+          <span class="tag">Fraud Detection</span>
+          <span class="tag">Lending AI</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/Cloud & DataOps/images.jpg');"></div>
+        <h3>Cloud & DataOps</h3>
+        <p>Managed cloud infrastructure, DataOps automation, data observability, governance frameworks, and 24×7 support
+          across AWS, Azure, and GCP environments.</p>
+        <div class="service-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">Azure</span>
+          <span class="tag">GCP</span>
+          <span class="tag">DataOps</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/data engineering/download (2).jpg');"></div>
+        <h3>Data Governance & Quality</h3>
+        <p>Establish enterprise data catalogues, master data management, PII tagging, lineage tracking, and
+          compliance-ready data quality frameworks.</p>
+        <div class="service-tags">
+          <span class="tag">MDM</span>
+          <span class="tag">Data Catalog</span>
+          <span class="tag">PII Governance</span>
+          <span class="tag">GDPR</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/Healthcare & Clinical AI/download.jpg');">
+        </div>
+        <h3>Healthcare & Clinical AI</h3>
+        <p>Accelerate clinical workflows with AI-powered diagnostics support, claims automation, care personalization,
+          and healthcare data platform engineering.</p>
+        <div class="service-tags">
+          <span class="tag">HL7 / FHIR</span>
+          <span class="tag">Claims AI</span>
+          <span class="tag">EMR Analytics</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-bg" style="background-image: url('images/ai_ml solutions/download.jpg');"></div>
+        <h3>Strategy & AI Advisory</h3>
+        <p>From AI readiness assessments to full transformation roadmaps — our experts help you build a data strategy
+          that drives measurable ROI within weeks, not quarters.</p>
+        <div class="service-tags">
+          <span class="tag">AI Readiness</span>
+          <span class="tag">Roadmap</span>
+          <span class="tag">CoE Setup</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CASE STUDIES (NEW) -->
+  <section class="cases" id="cases">
+    <div class="reveal" style="margin-bottom: 60px;">
+      <div class="section-label">Success Stories</div>
+      <h2 class="section-title">Real Impact, Real Results</h2>
+      <p class="section-sub">See how we've helped enterprises transform through intelligent automation and AI-driven
+        insights.</p>
+    </div>
+
+    <div class="cases-grid reveal">
+      <!-- Case 1 -->
+      <div class="case-card">
+        <div class="case-badge">AI Agents</div>
+        <h3>Healthcare Provider Automation</h3>
+        <p>Implemented intelligent AI agents to automate patient scheduling and reduce administrative overhead.</p>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num">65%</span>
+            <span class="case-stat-label">Efficiency Gain</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">$2.3M</span>
+            <span class="case-stat-label">Saved Yearly</span>
+          </div>
+        </div>
+      </div>
+      <!-- Case 2 -->
+      <div class="case-card">
+        <div class="case-badge">Data Analytics</div>
+        <h3>Financial Services Analytics</h3>
+        <p>Built real-time analytics dashboard enabling data-driven decision making and improving risk assessment.</p>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num">94%</span>
+            <span class="case-stat-label">Accuracy Rate</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">3.2x</span>
+            <span class="case-stat-label">Faster Insights</span>
+          </div>
+        </div>
+      </div>
+      <!-- Case 3 -->
+      <div class="case-card">
+        <div class="case-badge">Automation</div>
+        <h3>E-Commerce Operations</h3>
+        <p>Automated entire order fulfillment pipeline, reducing delivery times and improving satisfaction.</p>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-num">40%</span>
+            <span class="case-stat-label">Faster Delivery</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-num">98%</span>
+            <span class="case-stat-label">Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="reveal" style="text-align:center;margin-bottom:0;">
+      <div class="section-label" style="justify-content:center;">Our Process</div>
+      <h2 class="section-title" style="margin:0 auto;text-align:center;">From Day 1 to Production in Weeks</h2>
+      <p class="section-sub" style="margin:14px auto 0;text-align:center;">A battle-tested delivery model that gets you
+        to value faster.</p>
+    </div>
+
+    <div class="how-steps reveal">
+      <div class="step">
+        <div class="step-num"
+          style="background:linear-gradient(135deg,#ff6b2b,#e0308c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-color:rgba(255,107,43,0.4)">
+          01</div>
+        <h4>Assess</h4>
+        <p>Deep-dive into your data landscape, business objectives, and technology gaps to craft a precise problem
+          statement.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"
+          style="background:linear-gradient(135deg,#e0308c,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-color:rgba(224,48,140,0.4)">
+          02</div>
+        <h4>Architect</h4>
+        <p>Design a scalable, cloud-native solution architecture with pre-built accelerators to cut time-to-value by
+          60%.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"
+          style="background:linear-gradient(135deg,#7c3aed,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-color:rgba(124,58,237,0.4)">
+          03</div>
+        <h4>Build</h4>
+        <p>Agile sprints with embedded domain experts delivering working pipelines, models, and dashboards every 2
+          weeks.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"
+          style="background:linear-gradient(135deg,#00d4ff,#a3e635);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-color:rgba(0,212,255,0.4)">
+          04</div>
+        <h4>Deploy</h4>
+        <p>Production-grade deployment with MLOps, monitoring, and documentation — all IP transferred to your team.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"
+          style="background:linear-gradient(135deg,#a3e635,#ff6b2b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;border-color:rgba(163,230,53,0.4)">
+          05</div>
+        <h4>Scale</h4>
+        <p>24×7 managed support, continuous model retraining, and capability expansion as your business grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries" id="industries">
+    <div class="reveal">
+      <div class="section-label">Who We Serve</div>
+      <h2 class="section-title">Built for Every Industry</h2>
+      <p class="section-sub">Vertical-specific AI solutions with deep domain expertise baked in.</p>
+    </div>
+
+    <div class="industries-grid reveal">
+      <div class="industry-card">
+        <div class="industry-icon">🏦</div>
+        <h4>Banking & NBFC</h4>
+        <p>Credit risk, collections, onboarding automation</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🛡️</div>
+        <h4>Insurance</h4>
+        <p>Claims automation, fraud detection, underwriting AI</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏥</div>
+        <h4>Healthcare</h4>
+        <p>Clinical AI, revenue cycle, patient analytics</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🛒</div>
+        <h4>Retail & CPG</h4>
+        <p>Personalization, demand forecasting, supply chain</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🏭</div>
+        <h4>Manufacturing</h4>
+        <p>Predictive maintenance, OEE, quality control AI</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">💊</div>
+        <h4>Pharma & Life Sciences</h4>
+        <p>R&D analytics, clinical trial intelligence, compliance</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🚀</div>
+        <h4>FinTech Startups</h4>
+        <p>API-first data infra, fraud stacks, lending intelligence</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-icon">🌐</div>
+        <h4>E-Commerce</h4>
+        <p>Customer 360, dynamic pricing, inventory analytics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="stack">
+    <div class="reveal">
+      <div class="section-label">Technology</div>
+      <h2 class="section-title">Partnered with the Best Platforms</h2>
+      <p class="section-sub">We're certified partners across the leading modern data and AI stack — no vendor lock-in,
+        ever.</p>
+    </div>
+
+    <div class="tech-grid reveal">
+      <div class="tech-pill"><span>❄️</span> Snowflake</div>
+      <div class="tech-pill"><span>🧱</span> Databricks</div>
+      <div class="tech-pill"><span>☁️</span> AWS</div>
+      <div class="tech-pill"><span>🔵</span> Microsoft Azure</div>
+      <div class="tech-pill"><span>🟡</span> Google Cloud</div>
+      <div class="tech-pill"><span>🔶</span> dbt</div>
+      <div class="tech-pill"><span>⚡</span> Apache Spark</div>
+      <div class="tech-pill"><span>🌀</span> Apache Airflow</div>
+      <div class="tech-pill"><span>🤗</span> Hugging Face</div>
+      <div class="tech-pill"><span>🧠</span> OpenAI / Azure OpenAI</div>
+      <div class="tech-pill"><span>📊</span> Tableau</div>
+      <div class="tech-pill"><span>📉</span> Power BI</div>
+      <div class="tech-pill"><span>🔍</span> Elastic Search</div>
+      <div class="tech-pill"><span>🏗️</span> Terraform</div>
+      <div class="tech-pill"><span>🐳</span> Kubernetes</div>
+      <div class="tech-pill"><span>🔗</span> Apache Kafka</div>
+      <div class="tech-pill"><span>🦜</span> LangChain</div>
+      <div class="tech-pill"><span>🎯</span> MLflow</div>
+      <div class="tech-pill"><span>🌿</span> MongoDB</div>
+      <div class="tech-pill"><span>🐘</span> PostgreSQL</div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="metrics-section">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label" style="justify-content:center;">Impact by Numbers</div>
+      <h2 class="section-title" style="margin:0 auto;text-align:center;">Real Results for Real Businesses</h2>
+    </div>
+
+    <div class="metrics-grid reveal">
+      <div class="metric-card">
+        <div class="metric-num">87%</div>
+        <div class="metric-label">Reduction in manual reporting time for clients</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">4×</div>
+        <div class="metric-label">Faster time from data to decision</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">$800M+</div>
+        <div class="metric-label">Business value delivered across engagements</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">40%</div>
+        <div class="metric-label">Average reduction in AI solution build time</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">99.9%</div>
+        <div class="metric-label">Uptime SLA on managed data platforms</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="reveal">
+      <div class="section-label">Client Stories</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Their team transformed our entire credit underwriting pipeline. We went from 3-day
+          approvals to same-day decisions. The fraud detection models alone saved us crores in the first quarter.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div>
+            <div class="testi-name">Rahul Kapoor</div>
+            <div class="testi-role">Chief Risk Officer, Leading NBFC</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We evaluated 6 vendors. These folks stood out because they transferred complete IP
+          ownership. Our internal team now runs the platform independently — that's real self-sufficiency.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PS</div>
+          <div>
+            <div class="testi-name">Priya Suresh</div>
+            <div class="testi-role">Head of Data, Retail Chain (500+ stores)</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The Snowflake migration that was supposed to take 12 months? Done in 11 weeks. Our data
+          costs dropped 60% and query performance is night-and-day different. Incredible execution.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AM</div>
+          <div>
+            <div class="testi-name">Arjun Mehta</div>
+            <div class="testi-role">VP Engineering, Healthcare Platform</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG (NEW) -->
+  <section class="blog-section" id="blog">
+    <div class="reveal" style="margin-bottom: 50px;">
+      <div class="section-label">Insights</div>
+      <h2 class="section-title">Latest from Our CoE</h2>
+      <p class="section-sub">Thought leadership on the future of AI, data engineering, and intelligent growth.</p>
+    </div>
+
+    <div class="blog-grid reveal">
+      <a href="#" class="blog-card">
+        <div class="blog-image">📊</div>
+        <div class="blog-content">
+          <div class="blog-meta">12 July 2025 • Data Analytics</div>
+          <h3>Retail's Reality Check: Why Data Alone Isn't Enough</h3>
+          <p>Navigating business data in 2025 requires more than just numbers—it requires intelligent context.</p>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-image">🤖</div>
+        <div class="blog-content">
+          <div class="blog-meta">8 July 2025 • AI Agents</div>
+          <h3>The Rise of Autonomous AI Agents in Enterprise</h3>
+          <p>How leading companies are deploying AI agents that work around the clock to scale operations.</p>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-image">⚡</div>
+        <div class="blog-content">
+          <div class="blog-meta">2 July 2025 • Automation</div>
+          <h3>How Automation Saved Our Client 40 Hours a Week</h3>
+          <p>A deep dive into streamlining manufacturing workflows and eliminating manual bottlenecks.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="cta-bg"></div>
+    <div class="grid-bg" style="opacity: 0.3;"></div>
+
+    <div style="position:relative;z-index:10;">
+      <h2>Ready to Unlock Your<br /><span
+          style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Data's
+          Full Potential?</span></h2>
+      <p>Join 300+ enterprises that made data their competitive edge. Get a free 30-minute strategy session with our
+        experts.</p>
+      <div class="contact-container">
+        <form class="main-contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Work Email</label>
+              <input type="email" placeholder="john@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" placeholder="Acme Inc." required />
+          </div>
+          <div class="form-group">
+            <label>How can we help?</label>
+            <textarea placeholder="Tell us about your project or goals..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Send Inquiry →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom: 20px;">
+          <img src="images/Group 26.png" alt="Growth Vector Logo" style="height: 32px;">
+        </div>
+        <p>A leading Business Consulting and Services firm helping enterprises turn data into competitive advantage.
+          Trusted across BFSI, Healthcare, Retail, and beyond.</p>
+        <p style="margin-top: 10px; font-size: 0.75rem; font-weight: 600; color: var(--c-muted);">Dubai International
+          Financial Centre<br>Dubai, AE</p>
+        <div class="social-links" style="margin-top:20px;">
+          <a class="social-link" href="#">in</a>
+          <a class="social-link" href="#">𝕏</a>
+          <a class="social-link" href="#">gh</a>
+          <a class="social-link" href="#">yt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Analytics & BI</a></li>
+          <li><a href="#">AI / ML Solutions</a></li>
+          <li><a href="#">Data Engineering</a></li>
+          <li><a href="#">FinTech Intelligence</a></li>
+          <li><a href="#">Cloud & DataOps</a></li>
+          <li><a href="#">AI Advisory</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="#">Banking & NBFC</a></li>
+          <li><a href="#">Insurance</a></li>
+          <li><a href="#">Healthcare</a></li>
+          <li><a href="#">Retail & CPG</a></li>
+          <li><a href="#">Manufacturing</a></li>
+          <li><a href="#">Pharma</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#cases">Case Studies</a></li>
+          <li><a href="#blog">Blog & Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Growth Vector. All rights reserved.</span>
+      <span>Dubai International Financial Centre, UAE</span>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Smooth nav active
+    const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.style.color = '');
+        this.style.color = '#ff7e47';
+      });
+    });
+
+    // Typing Animation
+    const words = ["Intelligent Growth", "Limitless Scale", "Future-Proof AI", "Strategic Decisions"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 100;
+    const backspaceSpeed = 50;
+    const pauseEnd = 2000;
+    const typingTextEl = document.getElementById('typing-text');
+
+    function type() {
+      if (!typingTextEl) return;
+      const currentWord = words[wordIndex];
+
+      if (isDeleting) {
+        typingTextEl.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingTextEl.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, pauseEnd);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 500);
+      } else {
+        setTimeout(type, isDeleting ? backspaceSpeed : typingSpeed);
+      }
+    }
+
+    // Count-up logic
+    const countObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        if (!target || el.dataset.counted) return;
+        el.dataset.counted = '1';
+
+        const duration = 2000;
+        const start = performance.now();
+        const tick = now => {
+          const p = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - p, 4);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target + suffix;
+        };
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+
+    // Mouse-tracking glow for cards
+    document.addEventListener('mousemove', e => {
+      document.querySelectorAll('.service-card, .case-card, .blog-card, .testi-card').forEach(card => {
+        const r = card.getBoundingClientRect();
+        const mx = ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%';
+        const my = ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%';
+        card.style.setProperty('--mx', mx);
+        card.style.setProperty('--my', my);
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      revealEls.forEach(el => observer.observe(el));
+      document.querySelectorAll('.counter').forEach(el => countObs.observe(el));
+      setTimeout(type, 1000);
+    });
+  </script>
+</body>
+
+</html>
